@@ -12,6 +12,13 @@ Traanscript looks like below and consists of `Exons: 7, Coding exons: 7, Transcr
 
 Okay, that means i can extract from the reference assembly only Chr 2 data, align my assembly on this ref Chr 2, only for aligned data perform more accurate analysis. (because i don't want to parse such large gff as the whole ref gff, whatfor??)
 
+Let's extract Chromosome 2 from ref fasta. Firstly let's chech ref.fasta headers, they have to be alright as it's ncbi refseq data for one of the most common model organism among the plants.
+![image](https://github.com/user-attachments/assets/44b221b3-f3d9-4d2d-ac62-9193f68a7ac3)
+nice, let's extract chr2 data into new file Chr2_ref.fna
+```
+sed -n '/^>NC_003071.7/,/^>/p' файл.fasta | sed '$d' > Chr2_ref.fna
+```
+
 BUT, there was another way to make a visualization through IGV web, after _indexing by samtools_ ref files andf results of alignment whole sample genome against the whole ref genome by _minimap2_ to make an visualization, with is, by the way, uncapable to say somewthing helpful and for me extremely unpleasant, (спасибо дура так сказать), but it's the option to see snp and misassemlies of all sorts.
 
 ```
