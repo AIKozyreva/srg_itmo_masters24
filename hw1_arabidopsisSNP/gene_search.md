@@ -12,6 +12,6 @@ Traanscript looks like below and consists of `Exons: 7, Coding exons: 7, Transcr
 
 Okay, that means i can extract from the reference assembly only Chr 2 data, align my assembly on this ref Chr 2, only for aligned data perform more accurate analysis. (because i don't want to parse such large gff as the whole ref gff, whatfor??)
 
-BUT, there was another way to make a visualization through IGV web, after _indexing by samtools_ ref files andf results of alignment whole sample genome against the whole ref genome by _minimap2_ to make an visualization, with is, by the way, uncapable to say somewthing helpful and for me extremely unpleasant, (спасибо дура так сказать), but it's the option.
+BUT, there was another way to make a visualization through IGV web, after _indexing by samtools_ ref files andf results of alignment whole sample genome against the whole ref genome by _minimap2_ to make an visualization, with is, by the way, uncapable to say somewthing helpful and for me extremely unpleasant, (спасибо дура так сказать), but it's the option to see snp and misassemlies of all sorts.
 
 ![image](https://github.com/user-attachments/assets/317f5834-312b-46d9-9651-897922958523)
