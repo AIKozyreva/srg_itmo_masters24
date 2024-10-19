@@ -8,6 +8,8 @@ quast.py -o ./191024_compare_genomics_hw/quast_res -r ./191024_compare_genomics_
 First of all amount of contigs, as well as their sizes and general size, looks alike ref one, so that's nice. 
 
 ![image](https://github.com/user-attachments/assets/09cb587c-5210-4c23-82fb-95d12c85bf8c)
+![image](https://github.com/user-attachments/assets/ade8e18f-8bb8-4cc2-aeaa-71cb77b47fcb)
+
 
 There are a lot of missasemblies. They possibly marked in the reverse placement of sample-assembly (because these misasemblies one by one in the genome) in comparision with ref one. Or these can be rearrangement or duplicated sequences, due to plants assembly problems and special features.  
 
