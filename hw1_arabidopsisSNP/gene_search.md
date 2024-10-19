@@ -14,4 +14,9 @@ Okay, that means i can extract from the reference assembly only Chr 2 data, alig
 
 BUT, there was another way to make a visualization through IGV web, after _indexing by samtools_ ref files andf results of alignment whole sample genome against the whole ref genome by _minimap2_ to make an visualization, with is, by the way, uncapable to say somewthing helpful and for me extremely unpleasant, (спасибо дура так сказать), but it's the option to see snp and misassemlies of all sorts.
 
+```
+minimap2 -t 16 -a ./ref.fna ./GCA_024498455.1.fna | samtools view -bS | samtools sort -o GCA_024498455.1_sorted.bam; samtools index GCA_024498455.1_sorted.bam
+samtools faidx ./191024_compare_genomics_hw/ref.fna
+```
+
 ![image](https://github.com/user-attachments/assets/317f5834-312b-46d9-9651-897922958523)
