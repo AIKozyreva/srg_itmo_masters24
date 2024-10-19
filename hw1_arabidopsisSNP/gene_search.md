@@ -7,4 +7,11 @@ Throuh this page we will find out placement of this gene in ref genome. It is on
 Nice, we also can see it on the screenshot below. 
 ![image](https://github.com/user-attachments/assets/3e97023b-b782-49b9-b47b-15e88ca63b0f)
 
+Traanscript looks like below and consists of `Exons: 7, Coding exons: 7, Transcript length: 1,303 bps` 
+![image](https://github.com/user-attachments/assets/5f710b01-ef57-4cc7-84c6-0b2c9aff0cea)
+
 Okay, that means i can extract from the reference assembly only Chr 2 data, align my assembly on this ref Chr 2, only for aligned data perform more accurate analysis. (because i don't want to parse such large gff as the whole ref gff, whatfor??)
+
+BUT, there was another way to make a visualization through IGV web, after _indexing by samtools_ ref files andf results of alignment whole sample genome against the whole ref genome by _minimap2_ to make an visualization, with is, by the way, uncapable to say somewthing helpful and for me extremely unpleasant, (спасибо дура так сказать), but it's the option.
+
+![image](https://github.com/user-attachments/assets/317f5834-312b-46d9-9651-897922958523)
