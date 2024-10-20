@@ -28,3 +28,5 @@ busco -i ./GCA_024498455.1.fna -o ./BUSCO_results -m genome -l ./brassicales_odb
 ![image](https://github.com/user-attachments/assets/f2e3122b-4153-4476-9456-fbdd54f2aaf7)
 
 BUSCO's datasets by the link (for russia you'll need vpn :) HAHA CLASSIC): https://busco-data.ezlab.org/v5/data/lineages/ 
+
+Well we have a liitle amount of duplicated core genes, maybe they are the reason why we  havfe bigger asssembly len than the ref one, but for my aim it doesnt't matter at least for now. See, an extremely few partial or misssed busco amount talks aboiut high fullnesses o genome. we haven't lost anything big.
