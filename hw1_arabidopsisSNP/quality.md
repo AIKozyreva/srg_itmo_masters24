@@ -23,5 +23,8 @@ But  it isn't seem to be any untrimmed seqs, so i won't do anything with this da
 
 #### Busco 
 ```
-
+busco -i ./GCA_024498455.1.fna -o ./BUSCO_results -m genome -l ./brassicales_odb10 --offline --cpu 10
 ```
+![image](https://github.com/user-attachments/assets/f2e3122b-4153-4476-9456-fbdd54f2aaf7)
+
+BUSCO's datasets by the link (for russia you'll need vpn :) HAHA CLASSIC): https://busco-data.ezlab.org/v5/data/lineages/ 
