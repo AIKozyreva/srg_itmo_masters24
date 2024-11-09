@@ -33,7 +33,7 @@ sudo update-alternatives --config java #это когда у вас нескол
 java -jar snpEff.jar #вызов "-help" для snpEff
 ```
 
-1. Alignment
+### 1. Alignment
 ```
 minimap2 -map-ont -a -o comp1_alignment.sam Ref_Serratia_rubidaea_dataset/GCF_016026735.1/Ref_GCF_016026735.1_ASM1602673v1_genomic.fna Serratia_rubidaea_strain2_dataset/GCF_900638005.1/rubi2_GCF_900638005.1_53550_B01_genomic.fna
 ```
@@ -44,13 +44,13 @@ samtools flagstats comp1_res/comp1_algn_sort.bam
 ```
 ![image](https://github.com/user-attachments/assets/14de4b45-fc0a-4e9e-9bbf-ce7d8a0a6d2e)
 
-2. creating VCF (snp calling)
+### 2. creating VCF (snp calling)
 
 ```
 bcftools mpileup -Ou -f ../Ref_Serratia_rubidaea_dataset/GCF_016026735.1/Ref_GCF_016026735.1_ASM1602673v1_genomic.fna comp1_algn_sort.bam | bcftools call -mv -Ov --ploidy 1 -o ./comp1_variants.vcf
 ```
 
-3. SNP annotation
+### 3. SNP annotation
 
 Так, для меня аннотация vcf - это подписывания регионов, где обнаружена заметна, значениями из референсной gff. Планирую сделать так: сделаю из референсной gff базу данных для snpEff, потому прогоню аннотацию с использованием этой бд, получу аннотированную vcf. Дальше из референсной gff найду все интересующие меня гены (видать их будет много), для каждой группы интереса скорее всего сделаю bed файл (?? или нет), потом посмотрю, можно ли сделать пересечение интервалов для vcf и bed файла, если да - то будет несколько маленьких vcf с по группам генов интереса. Если нет, то придётся как-то vcf форматировать или по аннотации вытаскивать нужное, но я чёта не хочу так делать, это надо на питоне думать чёта. 
 UPD: создание кастомной базы данных это конечно та ещё клоунада, спустя 40 минут тыканья в кнопки вроде чёта есть по референсной гфф.
@@ -96,6 +96,31 @@ java -jar ~/snpEff/snpEff.jar ann Serratia_rubidaea1 comp1_variants.vcf > annota
 ![image](https://github.com/user-attachments/assets/fb512fdf-7381-494c-976c-982a67aaeec0)
 ![image](https://github.com/user-attachments/assets/4ecb7812-c285-4e39-9909-035395d58261)
 
+> Тип варианта
+upstream_gene_variant: Вариант расположен перед началом гена (в направлении транскрипции).
+downstream_gene_variant: Вариант после конца гена.
+synonymous_variant: Синонимичный вариант (не изменяет аминокислоту).
+missense_variant: Несинонимичный (изменяет аминокислоту).
+stop_gained: Преждевременная остановка трансляции (образуется стоп-кодон).
+frameshift_variant: Вставка/делеция, меняющая рамку считывания.
 
-4. SNP stats per regions
+> Оценка значимости SNP
+MODIFIER: Незначительное или неизвестное влияние (влияет на некодирующие регионы или удалённые регуляторные элементы).
+LOW: Низкое влияние (например, синонимичный вариант).
+MODERATE: Умеренное влияние (например, missense_variant).
+HIGH: Высокое влияние (например, stop_gained или frameshift_variant).
+
+> Идентификатор гена
+Короткие имена: как alaC, указывающее на название или функцию гена.
+ID из баз данных: такие как I6G83_RS23475, где ID обычно уникален для конкретного организма или эксперимента.
+Иногда генам присваиваются более общеупотребимые обозначения, как lacZ или BRCA1.
+
+> Последствия на белковую последовательность
+p.Ile343Ile: Синонимичный вариант, не меняющий аминокислоту (в данном случае, изолейцин на позиции 343).
+p.Gly12Asp: Несинонимичная замена аминокислоты, где глицин заменяется на аспарагиновую кислоту.
+p.Tyr34*: Стоп-кодон в позиции 34, прерывающий трансляцию.
+p.Val45fs: Смещение рамки считывания (frameshift) на 45-й позиции, меняющий весь последующий белок.
+
+
+### 4. SNP stats per regions
 
