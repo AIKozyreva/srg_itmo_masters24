@@ -25,7 +25,7 @@ export BCFTOOLS_PLUGINS=/home/kozyr_home/bcftools/plugins
 **SnpEFF**
 
 ```
-instructions +
+wget https://snpeff.blob.core.windows.net/versions/snpEff_latest_core.zip
 unzip snpEff_latest_core.zip
 cd snpEff/
 sudo apt install openjdk-21-jdk #да, вам нужна джава, причём очень новая, 16 и 17 мне не подошли :) 
