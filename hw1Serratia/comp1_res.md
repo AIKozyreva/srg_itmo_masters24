@@ -162,6 +162,7 @@ awk '$3 == "CDS"' GCF_016026735.1_ASM1602673v1_genomic.gff | cut -f1,3,4,5,9 > c
 ```
 
 Чьорт на вот это `bedtools intersect -a aligned_regions_len.bed -b cds_only.gff -wa -wb > aligned_regions_len_cds.bed` получила ошибку, я её в жизни уже видела, но тогда она меня напугала, а сейчас я не сдамся! я выпила 3 энергетика, конечно, я теперь не сдамся.
+
 ![image](https://github.com/user-attachments/assets/822665bf-c806-4d3e-9cd5-b13763bfcf44)
 
 Ладно знгачит, надо переставить колонки. оставляем только формат .bed который прям для бед.
@@ -170,6 +171,8 @@ awk -F'\t' 'BEGIN {OFS="\t"} $2 == "CDS" {print $1, $3 - 1, $4, $5}' cds_only.gf
 ```
 ![image](https://github.com/user-attachments/assets/36ee41d1-ac04-41e6-9c3e-c0b96feb2726)
 
+Попытка номер 2 с командой `bedtools intersect -a aligned_regions_len.bed -b cds_only.bed -wa -wb > aligned_regions_len_cds.bed` СРАБОТАЛО!!! а зачем я это делала???
+![image](https://github.com/user-attachments/assets/99a7dda0-597a-473d-970c-5d920a208aac)
 
 
 
