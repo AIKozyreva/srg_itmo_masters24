@@ -1,0 +1,5 @@
+# y, xstart, xend, rotation, color, label, va,  bed
+ .6,     .1,    .8,       0,      , Ref, center, Ref_Serratia_rubidaea.bed
+ .4,     .1,    .8,       0,      , Strain2, center, Strain2_Serratia_rubidaea.bed
+# edges
+e, 0, 1, Ref_Serratia_rubidaea.Strain2_Serratia_rubidaea.anchors.simple
