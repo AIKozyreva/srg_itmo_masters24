@@ -50,6 +50,38 @@ python -m jcvi.formats.fasta format Strain2_53550_B01_cds.fasta ./task2/Strain2_
 ```
 ### Подготовка необходимых для графика файлов
 Так. тут гдек-то лажа в этой инструкции, потому что по форматам, даже при ФормАтИроВаНИИ как в инструкци и - нихчего не работает. Пришлось менять руками на этот раз, но это конечно, ни в какие рамки. А если у меня не 1, а 100 хромосом? А если все белки по-разномук называются, то тогда чё?  короче надо разобраться. препода спрошу конечно, но уверена, что он мне ничего сказать не сможет, как и обычно, это биоинфа помочь может бог, случай, ну и мой начальник иногда.
+
+Чторбы сработало, вы должны находится в папке, где у вас: file1.cds file1.bed, file2.cds file2.bed, причём для каждой группы часть до расширения должна назхываться одинаково у обоих файлов сдс и бед, иначе 0. + тут дохера нюансов с форматированием входных cds и bed файлов
 ```
- python -m jcvi.compara.catalog ortholog Ref_Serratia_rubidaea Strain2_Serratia_rubidaea --no_strip_names
+python -m jcvi.compara.catalog ortholog Ref_Serratia_rubidaea Strain2_Serratia_rubidaea --no_strip_names # получаем файл `.anchors` 
+python -m jcvi.compara.synteny depth --histogram Ref_Serratia_rubidaea.Strain2_Serratia_rubidaea.anchors.anchors
 ```
+
+Далее создаём файлы `seqids` & `layout` по примерам из документации. 
+
+_seqids_ contain the chromosomes to plot. Each line correspond to a track.
+_layout_ provides configuration for placement of tracks and mapping file between tracks.
+Layout file example - first section specify how to draw each track. Then the "edges"
+section specify which connections to draw.
+
+```seqids
+chr1,chr2,chr3
+chr1,chr2,chr3,pl1
+```
+
+```layout
+# y, xstart, xend, rotation, color, label, va,  bed
+ .6,     .1,    .8,       0,      , Ref, center, Ref_Serratia_rubidaea.bed
+ .4,     .1,    .8,       0,      , Strain2, center, Strain2_Serratia_rubidaea.bed
+# edges
+e, 0, 1, Ref_Serratia_rubidaea.Strain2_Serratia_rubidaea.anchors.simple
+```
+
+Далее чёта ещё непонятное, чтобы получить другие файлы `.simple`, на кокторый у нас ссылка в нашем `layout`, при этом документации написано, что симпл - это просто типа упрощённый вариант `.anchor`(??wtf??). А потом уже, командой `karyotype` строим тот график, который нам нужен для отображения крупных перестроек. 
+```
+python -m jcvi.compara.synteny screen --minspan=30 --simple Ref_Serratia_rubidaea.Strain2_Serratia_rubidaea.anchors Ref_Serratia_rubidaea.Strain2_Serratia_rubidaea.anchors.simple
+#для след. команды все параметры подобраны иТЕрАтивНо. notex ставить надо видимо всегда, потому что это ошибка пакета latex, он его в упор не видит, даже после прописывапние в PATH, ну и пожалуйста не очень то и нужно.
+python -m jcvi.graphics.karyotype --basepair --shadestyle line --figsize 16x16 --font Arial --notex seqids layout
+```
+
+![image](https://github.com/user-attachments/assets/d286037d-1fd9-4b6f-8141-96a98ad7cc30)
