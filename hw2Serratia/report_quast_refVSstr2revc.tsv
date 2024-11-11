@@ -1,0 +1,56 @@
+Assembly	Strain2_serratia_REVC
+# contigs (>= 0 bp)	1
+# contigs (>= 1000 bp)	1
+# contigs (>= 5000 bp)	1
+# contigs (>= 10000 bp)	1
+# contigs (>= 25000 bp)	1
+# contigs (>= 50000 bp)	1
+Total length (>= 0 bp)	5045153
+Total length (>= 1000 bp)	5045153
+Total length (>= 5000 bp)	5045153
+Total length (>= 10000 bp)	5045153
+Total length (>= 25000 bp)	5045153
+Total length (>= 50000 bp)	5045153
+# contigs	1
+Largest contig	5045153
+Total length	5045153
+Reference length	4995010
+GC (%)	58.97
+Reference GC (%)	59.25
+N50	5045153
+NG50	5045153
+N90	5045153
+NG90	5045153
+auN	5045153.0
+auNG	5095799.4
+L50	1
+LG50	1
+L90	1
+LG90	1
+# misassemblies	102
+# misassembled contigs	1
+Misassembled contigs length	5045153
+# local misassemblies	96
+# scaffold gap ext. mis.	0
+# scaffold gap loc. mis.	0
+# unaligned mis. contigs	0
+# unaligned contigs	0 + 1 part
+Unaligned length	554468
+Genome fraction (%)	89.760
+Duplication ratio	1.001
+# N's per 100 kbp	0.00
+# mismatches per 100 kbp	1467.30
+# indels per 100 kbp	39.24
+# genomic features	4467 + 112 part
+Largest alignment	287862
+Total aligned length	4490228
+NA50	70866
+NGA50	70866
+NA90	-
+NGA90	-
+auNA	97576.7
+auNGA	98556.2
+LA50	20
+LGA50	20
+LA90	-
+LGA90	-
