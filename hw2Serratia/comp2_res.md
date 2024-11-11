@@ -23,6 +23,14 @@ source ~/.bashrc #"перезагружаете" параметры
 2) MCscan.
 ```
 conda install -c bioconda last #если по ходу он будет вам выводить, что ему чёта ещё надо - лучше это установить во избежание проблем и кривых картинок
+
+which lastdb #смотрим пути до пакетов, чтоб добавить их в PATH
+which lastal 
+nano ~/.bashrc #открываем файл
+export PATH=$PATH:/home/kozyr_home/miniconda3/envs/srg_master/bin/lastdb #вписываем в файл две команды (пути пишите свои), сохраняем файл.
+export PATH=$PATH:/home/kozyr_home/miniconda3/envs/srg_master/bin/lastal
+source ~/.bashrc #"перезагружаете" параметры
+
 pip install jcvi
 ```
 
@@ -41,5 +49,7 @@ python -m jcvi.formats.fasta format Ref_GCF_016026735.1_cds.fasta ./task2/Ref_Se
 python -m jcvi.formats.fasta format Strain2_53550_B01_cds.fasta ./task2/Strain2_Serratia_rubidaea.cds
 ```
 ### Подготовка необходимых для графика файлов
-
-
+Так. тут гдек-то лажа в этой инструкции, потому что по форматам, даже при ФормАтИроВаНИИ как в инструкци и - нихчего не работает. Пришлось менять руками на этот раз, но это конечно, ни в какие рамки. А если у меня не 1, а 100 хромосом? А если все белки по-разномук называются, то тогда чё?  короче надо разобраться. препода спрошу конечно, но уверена, что он мне ничего сказать не сможет, как и обычно, это биоинфа помочь может бог, случай, ну и мой начальник иногда.
+```
+ python -m jcvi.compara.catalog ortholog Ref_Serratia_rubidaea Strain2_Serratia_rubidaea --no_strip_names
+```
