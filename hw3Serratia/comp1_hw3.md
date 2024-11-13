@@ -4,12 +4,14 @@
 Инструмент (https://github.com/JustinChu/JupiterPlot). Установка вообще не была простой если что. Ставится исключительно на что-то, имеющее gpu.
 
 ```
-
+conda install bioconda::jupiterplot
+#опционально: conda install -n your_env gcc_linux-64
 ```
 
 Картинка повыше - результат сравнения перевёрной в revc сборки штамма на референсную серацию. На второй картинке первичное сравнение всё с тем же референсном всё той же сборки штамма, но до в прямой ориентации. 
 ```
-
+jupiter name=jupi_plot_comp1 ref=./Ref_Serratia.fna fa=./Strain2_serratia_REVC.fasta labels=both
+jupiter name=2jupi_plot_comp1 ref=./Ref_Serratia.fna fa=./Strain2_serratia.fna
 ```
 
 ![image](https://github.com/user-attachments/assets/ec2fdbd1-6667-4381-a0ce-af5a5975148f)
