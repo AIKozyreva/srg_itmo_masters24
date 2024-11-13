@@ -17,7 +17,7 @@ export PATH=$PATH:/home/username/MUMmer3.23 #вписываете эту ком�
 source ~/.bashrc #"перезагружаете" параметры 
 ```
   
-2) MCscan.
+2) MCscan. Инструкция (https://github.com/tanghaibao/jcvi/wiki/MCscan-(Python-version)#microsynteny-visualization)
 ```
 conda install -c bioconda last #если по ходу он будет вам выводить, что ему чёта ещё надо - лучше это установить во избежание проблем и кривых картинок
 
