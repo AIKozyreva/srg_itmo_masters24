@@ -70,3 +70,8 @@ export PATH=$REPEATMASKER_DIR:$PATH
 export PERL5LIB=/home/kozyreva_ai/miniconda3/envs/RepeatMasker/share/RepeatMasker:$PERL5LIB
 source ~/.bashrc
 ```
+
+
+## 3. [CIRCOS](https://circos.ca/) - visualizing GC composition
+
+
