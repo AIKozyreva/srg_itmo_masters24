@@ -22,3 +22,19 @@ jupiter name=jupi_plot ref=./177_genomic.fna fa=./assembly.fasta maxBundleSize=5
 ```
 ![image](https://github.com/user-attachments/assets/25f913ce-33ae-497e-87d5-652dbdd7871f)
 
+## 2. RepeatModeler + RepeatMasker
+_Installation_
+RepeatModeler and RepeatMasker can be installed together as they are often used in conjunction. Ensure to install dependencies like **rmblast**. 
+Repeat Modeler - is a de novo transposable element (TE) family identification and modeling package. Repeat Masker - is a program that screens DNA sequences for interspersed repeats and low complexity DNA sequences. The output of the program is a detailed annotation of the repeats that are present in the query sequence as well as a modified version of the query sequence in which all the annotated repeats have been masked (default: replaced by Ns). 
+```
+conda install -c bioconda rmblast
+conda install -c bioconda repeatmodeler repeatmasker
+RepeatMasker -h
+RepeatModeler -h
+_______________________________________________________
+_RepeatMasker [-options] <seqfiles(s) in fasta format>_
+_______________________________________________________
+_RepeatModeler [-options] -database <XDF Database>_
+```
+
+
