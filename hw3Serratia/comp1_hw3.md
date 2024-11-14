@@ -41,9 +41,32 @@ _RepeatModeler [-options] -database <XDF Database>_
 `BuildDatabase -name Strain2REVC -dir ./RepMaskDB` --> сгенерит ряд файлов с расширениями `.nhr`, `.nnd`, `.nni`, `.njs`, `.nin`, `.nog`, `.nsq`.   
 Затем `RepeatModeler` запускаем на созданной по по моей фаста базе данных. 
 `RepeatModeler -database ../Strain2REVC -threads 20 -LTRStruct`
-Получаем ряд файлов, в том числе в файлах `consensi.fa`, одержащуюю консенсусы тех последовательностей, кторые были определены программой как отдельное семейство повтором в результтате анализа последовательности. 
+Получаем ряд файлов, в том числе в файлах `consensi.fa`, одержащуюю консенсусы тех последовательностей, которые были определены программой как отдельное семейство повтором в результтате анализа последовательности. 
 ![image](https://github.com/user-attachments/assets/22b03871-5517-45f8-acf6-db90536a59ae)
 Так же, если порыться в файлах можно найти файл `families-classified` пример ниже. В нём для каждого обнаруженного семейчтва есть координаты каждого вхождения обнаружения этого повтора. 
 ![image](https://github.com/user-attachments/assets/da33d05f-e5a8-4a75-8bb3-5406a158a4eb)
 
-Затем для обнаружения других повтором запускаем `RepeatMasker` 
+Затем для обнаружения других повтором запускаем `RepeatMasker`. 
+`RepeatMasker -lib ./RM_3560890.ThuNov141058212024/consensi.fa -pa 4 -small -xsmall -e rmblast -xm -gff -html -q -gc 55 -a -dir ./ ../Strain2_serratia_REVC.fasta`. Движок бластовый, максикрование нижним регистром, создание дополнительных выходных файлов в виде gff и html, `-q` чуть менее чувствительный, но в 2-3 раза быстрее вычислительно метод. `-gc N` это гц состав организма, если значете его, для перерасчёта какой-то там матрицы весов на одном из этапов. `-a` дополнительно создать файл с выравниванием (для построения графика далее), `-dir` задаёт выходную директорию, иначе файлы будут там же, где исследуемая фаста. 
+
+Чтобы построить график Кимуры по данным (циферки в многочисленных файлах вывода. если их посмотреть, вы уидите, что циферки в общем то одинаковые, но по-разному расположены, идля парсинга надо выбирать один формат какой-то, например гфф). Так вот, для осознания циферок надо посттроить график двумя скриптами на perl, первый скрипт создаст из файлa `.align` файл специального формата `.divsum`. Второй скрипт из этого файла построит график. 
+
+```
+calcDivergenceFromAlign.pl -s ./Strain2_serratia_REVC.divsum ./Strain2_serratia_REVC.fasta.align
+createRepeatLandscape.pl -div ./Strain2_serratia_REVC.divsum -t <title for plot> -g <INT your genome size for % counting>
+```
+![image](https://github.com/user-attachments/assets/63db41fb-c13b-4a09-8ace-bec698c67663)
+
+-Troubleshooting:
+Если возникли проблемы и вы получаете типа "_calcDivergenceFromAlign.pl Can't locate RepeatMaskerConfig.pm in @INC (you may need to install the RepeatMaskerConfig module)_". Это значит, что нужные для исполнения скрипта на перле библиотеки перла лежат в какой-то директории, которая не прописана в вашем системном PATH, надо их туда вписать. Первые команды помогут вам найти нужный файл во всей системе+удостовериться в месте, куда сам репитмаскер установлен чисто на всякий случай. Дальше вносите всё это в PATH в низ файла, тоже чисто на всякий случай. Дальше должно заработать. 
+
+Если не получается вызвать сами .pm скрипты, то просто найдите их в системе и при выхове пропишите полный путь до них. 
+```
+find / -name "RepeatMaskerConfig.pm" 2>/dev/null  ## допустим, получила /home/kozyreva_ai/miniconda3/envs/RepeatMasker/share/RepeatMasker/RepeatMaskerConfig.pm
+which RepeatMasker  ## допустим, получила /home/kozyreva_ai/miniconda3/envs/RepeatMasker/bin/RepeatMasker
+nano ~/.bashrc
+export REPEATMASKER_DIR=/home/kozyreva_ai/miniconda3/envs/RepeatMasker/bin
+export PATH=$REPEATMASKER_DIR:$PATH
+export PERL5LIB=/home/kozyreva_ai/miniconda3/envs/RepeatMasker/share/RepeatMasker:$PERL5LIB
+source ~/.bashrc
+```
