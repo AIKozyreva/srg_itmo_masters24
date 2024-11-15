@@ -74,6 +74,5 @@ source ~/.bashrc
 
 ## 3. [CIRCOS](https://circos.ca/) - visualizing GC composition
 
-есть инструкция. https://dbsloan.github.io/TS2022/exercises/circos.html 
-по ней ничего не работает. без неё тоже. охенный инструмент 10/10 и минус примерно 6 часов рабочего дня. просто охуительный совет, спасибо чел.
+есть инструкция. https://dbsloan.github.io/TS2022/exercises/circos.html, но у меня пока не получилось
 
