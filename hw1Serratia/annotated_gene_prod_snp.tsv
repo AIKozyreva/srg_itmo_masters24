@@ -1,0 +1,45 @@
+exp_Gene_Name	exp_POS	ref_gff_start	ref_gff_end	ref_gff_strand	ref_gff_gene	ref_gff_product
+I6G83_RS22710	4821795	4821566	4821796	+	vapB	type II toxin-antitoxin system VapB family antitoxin, type II toxin-antitoxin system VapC family toxin
+acpS	3910372	3910343	3910825	+	acpS	holo-ACP synthase
+bamA	355053	354885	357287	-	bamA	outer membrane protein assembly factor BamA
+ccdA	3968699	3968699	3968917	-	ccdA	type II toxin-antitoxin system antitoxin CcdA
+ccdA	3968700	3968699	3968917	-	ccdA	type II toxin-antitoxin system antitoxin CcdA
+ccdA	3968770	3968699	3968917	-	ccdA	type II toxin-antitoxin system antitoxin CcdA
+ccdA	3968815	3968699	3968917	-	ccdA	type II toxin-antitoxin system antitoxin CcdA
+ccdA	3968915	3968699	3968917	-	ccdA	type II toxin-antitoxin system antitoxin CcdA
+ccdA	3968917	3968699	3968917	-	ccdA	type II toxin-antitoxin system antitoxin CcdA
+ccdB	3968477	3968392	3968697	-	ccdB	type II toxin-antitoxin system toxin CcdB
+ccdB	3968545	3968392	3968697	-	ccdB	type II toxin-antitoxin system toxin CcdB
+ccdB	3968680	3968392	3968697	-	ccdB	type II toxin-antitoxin system toxin CcdB
+citG	4713806	4712914	4713807	-	citG	triphosphoribosyl-dephospho-CoA synthase CitG, citrate lyase holo-[acyl-carrier protein] synthase
+citG	4713806	4713788	4714336	-	citX	citrate lyase holo-[acyl-carrier protein] synthase
+dsbB	4224983	4224473	4224991	+	dsbB	disulfide bond formation protein DsbB
+exuR	899985	899210	899986	+	exuR	transcriptional regulator ExuR
+fruA	4769650	4768587	4770287	-	fruA	PTS fructose transporter subunit IIBC
+ispD	2382698	2381993	2382712	+	ispD	2-C-methyl-D-erythritol 4-phosphate cytidylyltransferase, 2-C-methyl-D-erythritol 2%2C4-cyclodiphosphate synthase
+ltaE	3178262	3178261	3179280	-	ltaE	low-specificity L-threonine aldolase
+mgrA	4740064	4739999	4741033	-	mgrA	L-glyceraldehyde 3-phosphate reductase
+mgrA	4740226	4739999	4741033	-	mgrA	L-glyceraldehyde 3-phosphate reductase
+mgrA	4740397	4739999	4741033	-	mgrA	L-glyceraldehyde 3-phosphate reductase
+mgrA	4740446	4739999	4741033	-	mgrA	L-glyceraldehyde 3-phosphate reductase
+mgrA	4740478	4739999	4741033	-	mgrA	L-glyceraldehyde 3-phosphate reductase
+mgrA	4740814	4739999	4741033	-	mgrA	L-glyceraldehyde 3-phosphate reductase
+mgrA	4740936	4739999	4741033	-	mgrA	L-glyceraldehyde 3-phosphate reductase
+mgrA	4741031	4739999	4741033	-	mgrA	L-glyceraldehyde 3-phosphate reductase
+nudI	4059176	4058830	4059255	+	nudI	nucleoside triphosphatase NudI
+nudK	83168	82880	83452	-	nudK	GDP-mannose pyrophosphatase NudK
+nudK	83400	82880	83452	-	nudK	GDP-mannose pyrophosphatase NudK
+pyk	4686412	4686349	4687776	+	pyk	pyruvate kinase
+pyk	4686581	4686349	4687776	+	pyk	pyruvate kinase
+pyk	4686778	4686349	4687776	+	pyk	pyruvate kinase
+pyk	4687066	4686349	4687776	+	pyk	pyruvate kinase
+pyk	4687516	4686349	4687776	+	pyk	pyruvate kinase
+rfbC	3096698	3096167	3096700	+	rfbC	dTDP-4-dehydrorhamnose 3%2C5-epimerase, dTDP-4-dehydrorhamnose reductase
+rfbD	3096815	3096700	3097566	+	rfbD	dTDP-4-dehydrorhamnose reductase
+rfbD	3096847	3096700	3097566	+	rfbD	dTDP-4-dehydrorhamnose reductase
+rfbD	3096901	3096700	3097566	+	rfbD	dTDP-4-dehydrorhamnose reductase
+rpsM	1109076	1108974	1109330	-	rpsM	30S ribosomal protein S13
+tolA	2793125	2792140	2793270	+	tolA	cell envelope integrity protein TolA
+tonB	4161817	4161585	4162337	-	tonB	TonB system transport protein TonB
+wecA	4418529	4418510	4419559	-	wecA	UDP-N-acetylglucosamine--undecaprenyl-phosphate N-acetylglucosaminephosphotransferase
+wzc	3089941	3089490	3091664	+	wzc	tyrosine-protein kinase Wzc
