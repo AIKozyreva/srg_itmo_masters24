@@ -183,3 +183,7 @@ awk -F'\t' 'BEGIN {OFS="\t"} $2 == "CDS" {print $1, $3 - 1, $4, $5}' cds_only.gf
 Из них самые интересные гены, в которых произошли значимые мутации - это ccdA и vapB, потому что их продукты - это антитоксины систем иммунологической защиты бактерий от фагов, а именно “type II toxin-antitoxin system VapB family antitoxin”, “type II toxin-antitoxin system antitoxin CcdA”, ещё интересным я бы назвала критический снп на позиции 355053, в гене bamA, который кодирует “outer membrane protein assembly factor BamA”.
 
 Промежуточные файлы, полученные во время парсинга будут прикреплены в репозиторий. Содержимое мне влом обписать, там по ходу скрипта на питоне понятно что в файле находится.
+
+Частотту снп посчитала просто скользящим окном.
+![comp1 2_distr_snp4](https://github.com/user-attachments/assets/f7acd872-fce1-4c22-a49b-fd8b0833a47b)
+
