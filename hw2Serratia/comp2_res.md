@@ -79,7 +79,7 @@ chr1,chr2,chr3,pl1
 e, 0, 1, Ref_Serratia_rubidaea.Strain2_Serratia_rubidaea.anchors.simple
 ```
 
-Ещё где-то тут получился график, который я пока вообще не понимаю. 
+Ещё где-то тут получился график. Вроде как он означает блоки обнаруженные в обрагизмах 
 ![image](https://github.com/user-attachments/assets/109fddf2-6285-448e-b627-6582c52661b2)
 
 
