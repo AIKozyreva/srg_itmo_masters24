@@ -45,6 +45,11 @@ python -m jcvi.formats.gff bed --type=CDS --key=Name --primary_only ../Serratia_
 python -m jcvi.formats.fasta format Ref_GCF_016026735.1_cds.fasta ./task2/Ref_Serratia_rubidaea.cds
 python -m jcvi.formats.fasta format Strain2_53550_B01_cds.fasta ./task2/Strain2_Serratia_rubidaea.cds
 ```
+
+Если исходно cds в виде fasta с нуклеотидами у вас нет, то их можно достать из fasta файла с использованием gff и пакета `agat`. Ставится из conda.
+```
+agat_sp_extract_sequences.pl -g ref_base_with_genomic_fasta.gff -f ref_base_GCF_016026735.1.fna -o ./try2/ref_base.cds
+```
 ### Подготовка необходимых для графика файлов
 Так. тут гдек-то лажа в этой инструкции, потому что по форматам, даже при ФормАтИроВаНИИ как в инструкци и - ничего не работает. Пришлось менять руками на этот раз, но это конечно, ни в какие рамки. А если у меня не 1, а 100 хромосом? А если все белки по-разному называются, то тогда чё?  короче надо разобраться. Выяснила, что проблема в том, что я хочу и буду использовать cDS как юниты сравнения, а не mRNA или гены. Ну и ладно.
 
